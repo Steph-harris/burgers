@@ -11,15 +11,16 @@ app.use(bodyParser.urlencoded({
 }))
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
-var exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
-}));
-app.set('view engine', 'handlebars');
-
-var routes = require('./controllers/things_controller.js');
-app.use('/', routes);
 
 app.listen(PORT, function(){
   console.log("Listening on port %s", PORT);
 });
+
+// var exphbs = require('express-handlebars');
+// app.engine('handlebars', exphbs({
+//     defaultLayout: 'main'
+// }));
+// app.set('view engine', 'handlebars');
+
+// var routes = require('./controllers/things_controller.js');
+// app.use('/', routes);
