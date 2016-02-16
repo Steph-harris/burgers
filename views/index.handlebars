@@ -5,12 +5,21 @@
       <h3>{{this.burger_name}}</h3>
       <div>
         <form method="POST" action="/delete?_method=DELETE">
-          <input input type="hidden" type="text" name="member_id" value={{this.id}}><br>
-          <button type="submit" class="btn btn-default">Eat Burger</button>
+          <input input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
+          <button type="submit" class="btn btn-primary">Eat Burger</button>
         </form>
       </div>
     {{/unless}}
   {{/each}}
+</div>
+<div class="col-md-4">
+  <h2>Add Burgers</h2>
+    <div>
+      <form method="POST" action="/create">
+        <input class="form-control" type="text" name="burger_name" value={{this.id}}><br>
+        <button type="submit" class="btn btn-success">Add Burger</button>
+      </form>
+    </div>
 </div>
 <div class="col-md-4">
   <h2>Eaten Burgers</h2>
@@ -18,29 +27,12 @@
       {{#if this.devoured}}
         <h3>{{this.burger_name}}</h3>
         <div>
-          <form method="POST" action="/create">
-            <input input type="hidden" type="text" name="burger_name" value={{this.id}}><br>
+          <!-- Update burger devoured status to false -->
+          <form method="POST" action="/update?_method=PUT">
+            <input type="hidden" type="text" name="burger_name" value={{this.id}}>
             <button type="submit" class="btn btn-info">Re-Add Burger to Que</button>
           </form>
         </div>
       {{/if}}  
     {{/each}}
 </div>
-
-<!-- {{#each super_clubs_data}}
-      {{#if this.active}}
-      <div style="border-style: solid; width: 180px; margin-bottom: 15px; padding: 6px; background-color:Teal; color: white;">      
-      <div>
-        <pre>{{this.id}}. {{this.name}}</pre>
-        <pre>Visit count: {{this.visit_count}}</pre>
-      </div>
-      <div>
-        <form method="POST" action="/update?_method=PUT">
-          <input type="hidden" type="text" name="member_id" value={{this.id}}>
-          <button type="submit" class="btn btn-default">Add Visit Count</button>
-        </form>
-      </div>
-      
-      </div>
-    {{/if}}
-    {{/each}} -->

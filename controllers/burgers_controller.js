@@ -3,7 +3,6 @@ var express = require("express");
 var router = express.Router();
 var burgers = require('../models/burger.js');
 
-
 //get route -> index
 router.get('/', function(req,res) {
   burgers.findAllBurgers(function(burgers_data){
@@ -13,7 +12,7 @@ router.get('/', function(req,res) {
 
 //post route -> back to /
 router.post('/create', function(req, res) {
-  burgers.addOneMemeber(req.body.burger_name, function(result){
+  burgers.addOneBurger(req.body.burger_name, function(result){
     console.log(result);
     res.redirect('/');
   });

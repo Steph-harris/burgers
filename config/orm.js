@@ -10,11 +10,10 @@ var orm = {
         });
     },
     // add a burger to database
-    addBurger: function(tableInput, cb) {
-        var addB = 'INSERT INTO ' + tableInput + ';';
-        connection.query(addB, function(err, result) {
-            if (err) throw err;
-            cb(result);
+    addBurger: function(tableInput, nameInput) {
+        var addB = 'INSERT INTO ' + tableInput + ' (burger_name, devoured) VALUES (?, ?)';
+        connection.query(addB, [nameInput, 0], function(err, result) {
+          if (err) throw err;
         });
     }
     //change devoured status from false to true
