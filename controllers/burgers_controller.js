@@ -1,37 +1,37 @@
-//import burgervar express = require('express');
+//import burgers
 var express = require("express");
 var router = express.Router();
 var burgers = require('../models/burger.js');
 
 
 //get route -> index
-router.get('/index', function(req,res) {
-  burgers.findAllMembers(function(burgers_data){
-    res.render('index', {burgers_data});
+router.get('/', function(req,res) {
+  burgers.findAllBurgers(function(burgers_data){
+    res.render('', {burgers_data});
   });
 });
 
-//post route -> back to index
+//post route -> back to /
 router.post('/create', function(req, res) {
-  burgers.addOneMemeber(req.body.member_name, function(result){
+  burgers.addOneMemeber(req.body.burger_name, function(result){
     console.log(result);
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 
-//put route -> back to index
+//put route -> back to /
 router.put('/update', function(req,res){
-  burgers.updateOneMember(req.body.member_id, function(result){
+  burgers.updateOneMember(req.body.burger_id, function(result){
     console.log(result);
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 
-//delete route -> back to index
+//delete route -> back to /
 router.delete('/delete', function(req,res){
-  burgers.removeOneMember(req.body.member_id, function(result){
+  burgers.removeOneMember(req.body.burger_id, function(result){
     console.log(result);
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 

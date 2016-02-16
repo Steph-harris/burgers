@@ -8,8 +8,8 @@ var orm = {
             if (err) throw err;
             cb(result);
         });
-    }
-    //add a burger to database
+    },
+    // add a burger to database
     addBurger: function(tableInput, cb) {
         var addB = 'INSERT INTO ' + tableInput + ';';
         connection.query(addB, function(err, result) {
