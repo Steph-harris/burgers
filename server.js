@@ -22,5 +22,5 @@ app.listen(PORT, function(){
 // }));
 // app.set('view engine', 'handlebars');
 
-// var routes = require('./controllers/things_controller.js');
+// var routes = require('./controllers/burgers_controller.js');
 // app.use('/', routes);
