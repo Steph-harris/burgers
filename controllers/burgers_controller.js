@@ -20,7 +20,7 @@ router.post('/create', function(req, res) {
 
 //put route -> back to /
 router.put('/update', function(req,res){
-  burgers.updateOneMember(req.body.burger_id, function(result){
+  burgers.updateOneBurger(req.body.burger_id, function(result){
     console.log(result);
     res.redirect('/');
   });
@@ -28,7 +28,7 @@ router.put('/update', function(req,res){
 
 //delete route -> back to /
 router.delete('/delete', function(req,res){
-  burgers.removeOneMember(req.body.burger_id, function(result){
+  burgers.removeOneBurger(req.body.burger_id, function(result){
     console.log(result);
     res.redirect('/');
   });
