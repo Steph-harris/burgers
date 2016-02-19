@@ -28,8 +28,8 @@
         <h3>{{this.burger_name}}</h3>
         <div>
           <!-- Update burger devoured status to false -->
-          <form method="PUT" action="/update?_method=PUT">
-            <input type="hidden" type="text" name="burger_name" value={{this.id}}>
+          <form method="POST" action="/update?_method=PUT">
+            <input type="hidden" type="text" name="burger_id" value={{this.id}}>
             <button type="submit" class="btn btn-info">Re-Add Burger to Que</button>
           </form>
         </div>

@@ -13,6 +13,7 @@ router.get('/', function(req,res) {
 //post route -> back to /
 router.post('/create', function(req, res) {
   burgers.addOneBurger(req.body.burger_name, function(result){
+    console.log(result);
   });
   res.redirect('/');
 });
@@ -28,8 +29,10 @@ router.put('/update', function(req,res){
 //delete route -> back to /
 router.delete('/delete', function(req,res){
   burgers.removeOneBurger(req.body.burger_id, function(result){
+    console.log(result);
   });
   res.redirect('/');
+
 });
 
 module.exports = router;

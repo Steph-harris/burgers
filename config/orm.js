@@ -20,7 +20,6 @@ var orm = {
   },
   //change devoured status from true to false
   reEatOne: function(tableInput, idInput){
-    debugger
     var reEat = 'UPDATE ' + tableInput + ' SET devoured = 0 WHERE id=?';
     connection.query(reEat, [idInput], function(err, result) {
       if (err) throw err;
