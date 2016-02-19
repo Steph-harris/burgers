@@ -18,9 +18,17 @@ var orm = {
       if (err) throw err;
     });
   },
+  //change devoured status from true to false
+  reEatOne: function(tableInput, idInput){
+    debugger
+    var reEat = 'UPDATE ' + tableInput + ' SET devoured = 0 WHERE id=?';
+    connection.query(reEat, [idInput], function(err, result) {
+      if (err) throw err;
+      console.log(result);
+    });
+  },
   //change devoured status from false to true
   eatOne: function(tableInput, idInput){
-    debugger
     var eatIt = 'UPDATE ' + tableInput + ' SET devoured = 1 WHERE id=?';
     connection.query(eatIt, [idInput], function(err, result) {
       if (err) throw err;

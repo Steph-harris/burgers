@@ -13,25 +13,23 @@ router.get('/', function(req,res) {
 //post route -> back to /
 router.post('/create', function(req, res) {
   burgers.addOneBurger(req.body.burger_name, function(result){
-    console.log(result);
-    res.redirect('/');
   });
+  res.redirect('/');
 });
 
 //put route -> back to /
 router.put('/update', function(req,res){
   burgers.updateOneBurger(req.body.burger_id, function(result){
     console.log(result);
-    res.redirect('/');
   });
+  res.redirect('/');
 });
 
 //delete route -> back to /
 router.delete('/delete', function(req,res){
   burgers.removeOneBurger(req.body.burger_id, function(result){
-    console.log(result);
-    res.redirect('/');
   });
+  res.redirect('/');
 });
 
 module.exports = router;

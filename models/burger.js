@@ -10,10 +10,11 @@ var burgers = {
   addOneBurger: function(nameInput, devoured) {
     orm.addBurger('burgers', nameInput, 0);
   },
+  //moves burger from devoured to uneaten  
   updateOneBurger: function(inputId){
-    orm.eatOne('burgers', inputId);
+    orm.reEatOne('burgers', inputId);
   },
-  //moves burger from eaten to devoured
+  //moves burger from uneaten to devoured
   removeOneBurger: function(inputId) {
     orm.eatOne('burgers', inputId);
   }
