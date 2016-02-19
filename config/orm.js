@@ -33,6 +33,14 @@ var orm = {
       if (err) throw err;
       console.log(result);
     });
+  },
+  //change devoured status from false to true
+  deleteOne: function(tableInput, idInput){
+    var delIt = 'DELETE FROM ' + tableInput + ' WHERE id=?';
+    connection.query(delIt, [idInput], function(err, result) {
+      if (err) throw err;
+      console.log(result);
+    });
   }
 }
     

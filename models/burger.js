@@ -17,6 +17,10 @@ var burgers = {
   //moves burger from uneaten to devoured
   removeOneBurger: function(inputId) {
     orm.eatOne('burgers', inputId);
+  },
+  //permanently removes burger from devoured
+  deleteOneBurger: function(inputId) {
+    orm.deleteOne('burgers', inputId);
   }
 };
     

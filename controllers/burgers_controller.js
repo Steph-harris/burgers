@@ -26,13 +26,19 @@ router.put('/update', function(req,res){
   res.redirect('/');
 });
 
-//delete route -> back to /
+//delete sends burger to be reeaten
 router.delete('/delete', function(req,res){
   burgers.removeOneBurger(req.body.burger_id, function(result){
     console.log(result);
   });
   res.redirect('/');
-
+});
+//permanently removes burger
+router.delete('/remove', function(req,res){
+  burgers.deleteOneBurger(req.body.burger_id, function(result){
+    console.log(result);
+  });
+  res.redirect('/');
 });
 
 module.exports = router;

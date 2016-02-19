@@ -13,7 +13,7 @@
   {{/each}}
 </div>
 <div class="col-md-4">
-  <h2>Add Burgers</h2>
+  <h2>Add Burger</h2>
     <div>
       <form method="POST" action="/create">
         <input class="form-control" type="text" name="burger_name" value={{this.id}}><br>
@@ -31,6 +31,10 @@
           <form method="POST" action="/update?_method=PUT">
             <input type="hidden" type="text" name="burger_id" value={{this.id}}>
             <button type="submit" class="btn btn-info">Re-Add Burger to Que</button>
+          </form>
+          <form method="POST" action="/remove?_method=DELETE">
+            <input type="hidden" type="text" name="burger_id" value={{this.id}}>
+            <button type="submit" class="btn btn-danger">Delete Burger</button>
           </form>
         </div>
       {{/if}}  
