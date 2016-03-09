@@ -1,3 +1,8 @@
+// require('dotenv').config();
+
+// var Sequelize = require('sequelize');
+// var connection = new Sequelize(process.env.JAWSDB_URL);
+
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
