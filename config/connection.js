@@ -1,22 +1,16 @@
-// require('dotenv').config();
-
-// var Sequelize = require('sequelize');
-// var connection = new Sequelize(process.env.JAWSDB_URL);
+require('dotenv').config();
 
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  port: 3306,
-  host: "localhost",
-  user: "root",
-  database: "burgers_db"
-});
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-connection.connect(function(err){
-  if (err) {
-    throw err;
-  }
-  console.log("connected as id " + connection.threadId);
-});
+connection.connect();
 
 module.exports = connection;
+
+// function(err){
+//   if (err) {
+//     throw err;
+//   }
+//   console.log("connected to db ");
+// }
